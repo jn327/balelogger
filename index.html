@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bale Logger ControllerApp</title>
+    <link href="css/stylesheet.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="https://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+	<script src="js/SimpleStore.js"></script>
+    <script src="js/mainLogic.js"></script>
+  </head>
+
+  <body>
+
+    <!-- App Interface -->
+
+    <div id="app">
+      <div class="title">
+        <h1>Bale Logger Controller</h1>
+      </div>
+
+      <div class="content">
+      </div>
+    </div>
+
+    <!-- Templates -->
+    <script type="text/template" id="login-template">
+      <header id="header"></header>
+      <div class="login">
+        <form class="login-form">
+          <h2>Log In:</h2>
+          <div class="error" style="display:none"></div>
+          <input type="text" id="accessCode" placeholder="Access Code" />
+		  
+		  Remember me:
+		  <input type="checkbox" id="rememberMeChecker">
+		  <label for="rememberMeChecker"><span></span></label>
+		   <br \>
+          <button>Log In</button>
+        </form>
+      </div>
+    </script>
+	
+	<script type="text/template" id="email-change-template">
+      <header id="header"></header>
+      <div class="submit">         
+	  <h2>Change email address:</h2>
+        <form class="submit-form">
+		<div id="user-info">App info empty please log out and back in</div>
+		<div>If set to empty no emails will be sent from the app</div>
+		  Change Email:
+          <input type="text" id="emailEntry" placeholder="Enter new email address:" />
+          <button>Submit</button>
+        </form>
+		  
+		<form class="cancel-form">
+          <button>Back</button>
+        </form>
+      </div>
+    </script>
+
+    <script type="text/template" id="manage-data-template">
+	<header id="header"></header>
+	  <div id="user-info">App info empty please log out and back in</div>
+	  <button class="log-out">Log out</button>
+	  <button class="change-email">Change email address</button>
+	
+	  <div id ="separator"></div>
+	  
+	  <ul id="filters">
+		  <li>
+			<a href="javascript:void(0)" id="all" class="selected">All</a>
+		  </li>
+		  <li>
+			<a href="javascript:void(0)" id="baling" class="selected">Baling</a>
+		  </li>
+		  <li>
+			<a href="javascript:void(0)" id="chasing">Chasing</a>
+		  </li>
+		  <li>
+			<a href="javascript:void(0)" id="deliveries">Deliveries</a>
+		  </li>
+		  <li>
+			<a href="javascript:void(0)" id="loading">Loading</a>
+		  </li>
+	  </ul>
+      <div id ="main">
+	  
+	  <button class="add" style="float: left;">Add job</button>
+      <button class="download">Download</button>
+	  <button class="TInvoiced" id="InvoiceButton">Show Invoiced</button>
+	  <button class="delete" style="float: right;">Delete Selected</button>
+	  <button class="invoiced" id="InvoiceMarker" style="float: right;">Mark Selected as Invoiced</button>
+
+	  <table class="section" id = "mainTable">
+      </table>
+      <br \>	  
+      </div>
+	  
+    </script>
+	
+  </body>
+</html>
